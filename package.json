@@ -9,10 +9,11 @@
     "remove:local": "graph remove --node http://localhost:8020/ blocklytics/ethereum-blocks",
     "deploy:local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 blocklytics/ethereum-blocks",
     "deploy:arbitrum-one:hosted-service": "npx graph deploy --product=hosted-service dolomite-exchange/arbitrum-one-blocks",
-    "deploy:polygon-zkevm": "npx graph deploy --studio polygon-zkevm-blocks"
+    "deploy:polygon-zkevm": "npx graph deploy --studio polygon-zkevm-blocks",
+    "deploy:x-layer": "npx graph deploy --studio x-layer-blocks"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.69.2",
-    "@graphprotocol/graph-ts": "^0.34.0"
+    "@graphprotocol/graph-cli": "^0.71.0",
+    "@graphprotocol/graph-ts": "^0.35.1"
   }
 }
