@@ -17,6 +17,11 @@
     "codegen:arbitrum-one": "yarn prepare:arbitrum-one && rm -rf src/types && graph codegen --output-dir src/types/",
     "build:arbitrum-one": "yarn prepare:arbitrum-one && graph build",
     "deploy:arbitrum-one": "yarn prepare:arbitrum-one && graph deploy --product hosted-service dolomite-exchange/arbitrum-one-blocks",
+    "mustache-template:berachain-bartio":  "mustache config/berachain-bartio.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:berachain-bartio": "yarn mustache-template:berachain-bartio",
+    "codegen:berachain-bartio": "yarn prepare:berachain-bartio && rm -rf src/types && graph codegen --output-dir src/types/",
+    "build:berachain-bartio": "yarn prepare:berachain-bartio && graph build",
+    "deploy:berachain-bartio": "yarn prepare:berachain-bartio && goldsky subgraph deploy berachain-blocks/1.0.0 --path .",
     "create-local": "graph create --node http://localhost:8020/ blocklytics/ethereum-blocks",
     "remove-local": "graph remove --node http://localhost:8020/ blocklytics/ethereum-blocks",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 blocklytics/ethereum-blocks"
