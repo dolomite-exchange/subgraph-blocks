@@ -23,7 +23,7 @@
     "deploy:base:ormi": "VERSION=$(cat version.txt) && yarn build:base && graph deploy blocks-base --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
     "deploy:berachain-bartio:ormi": "VERSION=$(cat version.txt) && yarn build:berachain-bartio && graph deploy blocks-berachain-bartio --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
     "deploy:mantle:ormi": "VERSION=$(cat version.txt) && yarn build:mantle && graph deploy blocks-mantle --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
-    "deploy:polygon-zkevm:ormi": "VERSION=$(cat version.txt) && yarn build:x-layer && graph deploy blocks-polygon-zkevm --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
+    "deploy:polygon-zkevm:ormi": "VERSION=$(cat version.txt) && yarn build:polygon-zkevm && graph deploy blocks-polygon-zkevm --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
     "deploy:x-layer:ormi": "VERSION=$(cat version.txt) && yarn build:x-layer && graph deploy blocks-x-layer --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs"
   },
   "dependencies": {
