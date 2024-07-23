@@ -3,17 +3,31 @@
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
-    "build": "graph build",
+    "mustache-template:arbitrum-one": "mustache config/arbitrum-one.json subgraph.template.yaml > subgraph.yaml",
+    "mustache-template:base": "mustache config/base.json subgraph.template.yaml > subgraph.yaml",
+    "mustache-template:berachain": "mustache config/berachain.json subgraph.template.yaml > subgraph.yaml",
+    "mustache-template:mantle": "mustache config/mantle.json subgraph.template.yaml > subgraph.yaml",
+    "mustache-template:polygon-zkevm": "mustache config/polygon-zkevm.json subgraph.template.yaml > subgraph.yaml",
+    "mustache-template:x-layer": "mustache config/x-layer.json subgraph.template.yaml > subgraph.yaml",
+    "build:arbitrum-one": "yarn mustache-template:arbitrum-one && yarn codegen && graph build",
+    "build:base": "yarn mustache-template:base && yarn codegen && graph build",
+    "build:berachain": "yarn mustache-template:berachain && yarn codegen && graph build",
+    "build:mantle": "yarn mustache-template:mantle && yarn codegen && graph build",
+    "build:polygon-zkevm": "yarn mustache-template:polygon-zkevm && yarn codegen && graph build",
+    "build:x-layer": "yarn mustache-template:x-layer && yarn codegen && graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ethereum-blocks",
     "create:local": "graph create --node http://localhost:8020/ blocklytics/ethereum-blocks",
     "remove:local": "graph remove --node http://localhost:8020/ blocklytics/ethereum-blocks",
     "deploy:local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 blocklytics/ethereum-blocks",
-    "deploy:arbitrum-one:hosted-service": "npx graph deploy --product=hosted-service dolomite-exchange/arbitrum-one-blocks",
-    "deploy:polygon-zkevm": "npx graph deploy --studio polygon-zkevm-blocks",
-    "deploy:x-layer": "npx graph deploy --studio x-layer-blocks"
+    "deploy:arbitrum-one:ormi": "VERSION=$(cat version.txt) && yarn build:arbitrum-one && graph deploy blocks-arbitrum --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
+    "deploy:base:ormi": "VERSION=$(cat version.txt) && yarn build:base && graph deploy blocks-base --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
+    "deploy:mantle:ormi": "VERSION=$(cat version.txt) && yarn build:mantle && graph deploy blocks-mantle --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
+    "deploy:polygon-zkevm:ormi": "VERSION=$(cat version.txt) && yarn build:x-layer && graph deploy blocks-polygon-zkevm --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs",
+    "deploy:x-layer:ormi": "VERSION=$(cat version.txt) && yarn build:x-layer && graph deploy blocks-x-layer --version-label=$VERSION --node https://dolomiteapi.0xgraph.xyz/deploy --ipfs https://dolomiteapi.0xgraph.xyz/ipfs"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.71.0",
-    "@graphprotocol/graph-ts": "^0.35.1"
+    "@graphprotocol/graph-cli": "^0.79.0",
+    "@graphprotocol/graph-ts": "^0.35.1",
+    "mustache": "^4.2.0"
   }
 }
