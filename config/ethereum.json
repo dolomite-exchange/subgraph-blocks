@@ -1,3 +1,4 @@
 {
-  "network": "ethereum"
+  "network": "ethereum",
+  "startBlock": 0
 }

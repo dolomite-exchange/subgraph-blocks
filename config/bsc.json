@@ -1,3 +1,4 @@
 {
-  "network": "bsc"
+  "network": "bsc",
+  "startBlock": 79000000
 }

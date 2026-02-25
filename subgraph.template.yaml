@@ -7,7 +7,7 @@ dataSources:
     name: Blocks
     network: {{network}}
     source:
-      startBlock: 79000000
+      startBlock: {{startBlock}}
       address: "0x0000000000000000000000000000000000000000"
       abi: IERC20
     mapping:

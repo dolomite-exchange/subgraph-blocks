@@ -1,3 +1,4 @@
 {
-  "network": "polygon-zkevm"
+  "network": "polygon-zkevm",
+  "startBlock": 0
 }

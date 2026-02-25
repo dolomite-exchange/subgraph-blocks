@@ -1,3 +1,4 @@
 {
-  "network": "mantle"
+  "network": "mantle",
+  "startBlock": 0
 }

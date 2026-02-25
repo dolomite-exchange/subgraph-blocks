@@ -1,3 +1,4 @@
 {
-  "network": "arbitrum-one"
+  "network": "arbitrum-one",
+  "startBlock": 0
 }

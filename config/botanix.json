@@ -1,3 +1,4 @@
 {
-  "network": "botanix"
+  "network": "botanix",
+  "startBlock": 0
 }

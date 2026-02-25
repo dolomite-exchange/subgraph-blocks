@@ -1,3 +1,4 @@
 {
-  "network": "base"
+  "network": "base",
+  "startBlock": 0
 }

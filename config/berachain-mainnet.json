@@ -1,3 +1,4 @@
 {
-  "network": "berachain-mainnet"
+  "network": "berachain-mainnet",
+  "startBlock": 0
 }

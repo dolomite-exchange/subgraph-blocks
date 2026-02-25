@@ -1,3 +1,4 @@
 {
-  "network": "xlayer"
+  "network": "xlayer",
+  "startBlock": 0
 }
